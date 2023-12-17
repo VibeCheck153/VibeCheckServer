@@ -16,7 +16,17 @@ export default {
   progressToken: process.env.PROGRESS_TOKEN,
   socketPort: process.env.SOCKET_PORT,
 
-  jwtSecret: process.env.JWT_SECRET,
+  googleClientSecret: process.env.GOOGLE_CLIENT_SECRET,
+  googleClientID: process.env.GOOGLE_CLIENT_ID,
+
+  jwtAccessTokenSecret: process.env.JWT_ACCESS_TOKEN_SECRET,
+  jwtRefreshTokenSecret: process.env.JWT_REFRESH_TOKEN_SECRET,
+  secretKey: process.env.SECRET_KEY,
+
+  dbUser: process.env.DB_USER,
+  dbPass: process.env.DB_PASSWORD,
+  dbHost: process.env.DB_HOST,
+  dbName: process.env.DB_NAME,
 
   logs: {
     level: process.env.LOG_LEVEL || 'silly',

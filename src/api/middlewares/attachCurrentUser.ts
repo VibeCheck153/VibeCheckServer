@@ -4,7 +4,7 @@ import { Logger } from 'winston';
 import config from '../../config'
 
 
-const attachCurrentUser = async (req, res, next) => {
+const checkAuth = async (req, res, next) => {
   const logger: Logger = Container.get('logger');
   try {
     const authHeader = req.headers['authorization']
@@ -17,25 +17,10 @@ const attachCurrentUser = async (req, res, next) => {
         let token =  authHeader.split(' ')[1]
         var decoded = verify(
           token,
-          config.jwtSecret
+          config.jwtAccessTokenSecret
         );
         req.isTokenPresent = true;
         return next();
-      }else if(authHeader.includes('Token')){
-        let token =  authHeader.split(' ')[1]
-        if(token === process.env.PROGRESS_TOKEN){
-          req.claims = req.body;
-          req.claims.token = token;
-          req.isTokenPresent = true;
-          if(req.claims === undefined){
-            req.claims = []
-            req.claims.masterOrgId = null;
-          }
-          next();
-        }else{
-          return res.sendStatus(401).send('Access denied')
-        }
-        
       }else{
         return res.sendStatus(401).send('Access denied')
       }
@@ -52,4 +37,4 @@ const attachCurrentUser = async (req, res, next) => {
   }
 };
 
-export default attachCurrentUser;
+export default checkAuth;
