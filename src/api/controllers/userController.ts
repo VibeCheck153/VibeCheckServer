@@ -5,7 +5,6 @@ import passport from 'passport';
 import config from '../../config';
 import { UserFactory } from '../../interfaces/IUser';
 import Jwt from 'jsonwebtoken';
-import { encrypt, decrypt } from '../../services/encryption';
 
 export default class UserController {
   private db: Driver;
@@ -176,7 +175,7 @@ export default class UserController {
         { uid: createResult.records[0]['_fields'][0], email: createResult.records[0]['_fields'][1] },
         config.jwtAccessTokenSecret,
         {
-          expiresIn: 86400,
+          expiresIn: '120d',
         },
       );
       console.log(token);

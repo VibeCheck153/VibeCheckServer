@@ -1,0 +1,518 @@
+[
+    {
+      "type": "Club",
+      "name": "Tao Chicago",
+      "location": "River North",
+      "gmap_link": "https://www.google.com/maps/place/TAO+Chicago/@41.8934131,-87.6300271,15z/data=!4m6!3m5!1s0x880e2cb2f20d9233:0xd1cbd1945bb9a508!8m2!3d41.8934131!4d-87.6300271!16s%2Fg%2F11hd22hrrx?entry=ttu",
+      "instagram_link": "https://www.instagram.com/taochicago/?hl=en",
+      "address": "TAO Chicago, 632 N Dearborn St, Chicago, IL 60654",
+      "coordinates": [
+        41.89348045,
+        -87.63006621712233
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "Beauty Bar",
+      "location": "River North",
+      "gmap_link": "https://www.google.com/maps/place/Beauty+Bar+Chicago/@41.8962917,-87.6641527,15z/data=!4m2!3m1!1s0x0:0x91156cbfaf7bb092?sa=X&ved=2ahUKEwjTyMvM7f2CAxX3MTQIHcClAi0Q_BJ6BAgaEAA",
+      "instagram_link": "https://www.instagram.com/beautybarchicago/",
+      "address": "Beauty Bar Chicago, 1444 W Chicago Ave, Chicago, IL 60642",
+      "coordinates": [
+        41.8963938,
+        -87.66416105373598
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "Electric Hotel",
+      "location": "River North",
+      "gmap_link": "https://www.google.com/maps/place/Electric+Hotel/@41.8934118,-87.6350828,15z/data=!4m2!3m1!1s0x0:0x4edd21283bf0a3a6?sa=X&ved=2ahUKEwj64frP7f2CAxV9LzQIHR8bCeYQ_BJ6BAgQEAA",
+      "instagram_link": "https://www.instagram.com/electrichotelchicago/?hl=en",
+      "address": "Electric Hotel, 222 W Ontario St, Chicago, IL 60654",
+      "coordinates": [
+        41.893443,
+        -87.6350756
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "Sound-Bar",
+      "location": "River North",
+      "gmap_link": "https://www.google.com/maps/place/Sound+Bar/@41.8934418,-87.6353769,15z/data=!4m2!3m1!1s0x0:0xc9da762ac3e330c?sa=X&ved=2ahUKEwjc5eLV7v2CAxUILzQIHWLBDjQQ_BJ6BAgSEAA",
+      "instagram_link": "https://www.instagram.com/sound_bar/",
+      "address": "Sound Bar, 226 W Ontario St, Chicago, IL 60654",
+      "coordinates": [
+        41.893406,
+        -87.6354147
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "The Underground",
+      "location": "River North",
+      "gmap_link": "https://www.google.com/maps/place/Underground/@41.8909374,-87.6301541,15z/data=!4m2!3m1!1s0x0:0xb4d0655242ab93d1?sa=X&ved=2ahUKEwjv0evS7f2CAxV9ODQIHSX0CSEQ_BJ6BAgfEAA",
+      "instagram_link": "https://www.instagram.com/undergroundchi/",
+      "address": "Underground, 56 W Illinois St, Chicago, IL 60654",
+      "coordinates": [
+        41.89090927131049,
+        -87.63001025667215
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "Disco",
+      "location": "River North",
+      "gmap_link": "https://www.google.com/maps/place/DISCO/@41.8897818,-87.6316126,15z/data=!4m2!3m1!1s0x0:0xbefb93479bc4aa74?sa=X&ved=2ahUKEwig7sKT7v2CAxVjADQIHbgzDs8Q_BJ6BAgnEAA",
+      "instagram_link": "https://www.instagram.com/discochicago/?hl=en",
+      "address": "DISCO, 111 W Hubbard St 3rd floor, Chicago, IL 60654",
+      "coordinates": [
+        41.8898493,
+        -87.631628
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "PRYSM",
+      "location": "River North",
+      "gmap_link": "https://www.google.com/maps/place/PRYSM+Chicago/@41.9093663,-87.6525434,15z/data=!4m2!3m1!1s0x0:0x8ffce9cbd01a6d55?sa=X&ved=2ahUKEwjDzvWS7_2CAxV2weYEHXBYA0MQ_BJ6BAgREAA",
+      "instagram_link": "https://www.instagram.com/prysmnightclub/?hl=en",
+      "address": "PRYSM Chicago, 1543 N Kingsbury St, Chicago, IL 60642",
+      "coordinates": [
+        41.909389149999996,
+        -87.65240938715317
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "Spybar",
+      "location": "River North",
+      "gmap_link": "https://www.google.com/maps/place/Spybar/@41.8937033,-87.6358657,15z/data=!4m2!3m1!1s0x0:0x81a09ddbf492004c?sa=X&ved=2ahUKEwienpz97v2CAxXqMDQIHQCQAksQ_BJ6BAhhEAA",
+      "instagram_link": "https://www.instagram.com/spybar/",
+      "address": "Spybar, 646 N Franklin St, Chicago, IL 60654",
+      "coordinates": [
+        41.8936239,
+        -87.6358462
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "Fame",
+      "location": "River North",
+      "gmap_link": "https://www.google.com/maps/place/Fame+Nightclub/@41.8929546,-87.6334283,15z/data=!4m6!3m5!1s0x880e2d5885b76419:0x43f1f5234a51c314!8m2!3d41.8929546!4d-87.6334283!16s%2Fg%2F11rd02j65j?entry=ttu",
+      "instagram_link": "https://www.instagram.com/fameinchicago/?hl=en",
+      "address": "Fame Nightclub, 157 W Ontario St, Chicago, IL 60654",
+      "coordinates": [
+        41.892966650000005,
+        -87.63343615636498
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "Joy District",
+      "location": "River North",
+      "gmap_link": "https://www.google.com/maps/place/Joy+District/@41.8901886,-87.6317705,15z/data=!4m6!3m5!1s0x880e2cb1625f2119:0x8739afc3f0d3135b!8m2!3d41.8901886!4d-87.6317705!16s%2Fg%2F11cmt63cb9?entry=ttu",
+      "instagram_link": "https://www.instagram.com/joydistrictchi/?hl=en",
+      "address": "Joy District, 112 W Hubbard St, Chicago, IL 60654",
+      "coordinates": [
+        41.8902577,
+        -87.6318046
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "Tunnel",
+      "location": "River North",
+      "gmap_link": "https://www.google.com/maps/place/Tunnel/@41.8890402,-87.6330723,15z/data=!4m2!3m1!1s0x0:0x985489c14c66f8c5?sa=X&ved=2ahUKEwiHh7qA8_2CAxXIMzQIHazyAHcQ_BJ6BAgREAA&cshid=1701971879996168",
+      "instagram_link": "https://www.instagram.com/tunnelchicago/?hl=en",
+      "address": "Tunnel, 151 W Kinzie St, Chicago, IL 60654",
+      "coordinates": [
+        41.88909387934151,
+        -87.63328469584346
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "LITE Chicago",
+      "location": "River North",
+      "gmap_link": "https://www.google.com/maps/place/LITE+Chicago/@41.892961,-87.634836,15z/data=!4m6!3m5!1s0x880e2cb4f59d9b79:0x5d6e806061b101ca!8m2!3d41.892961!4d-87.634836!16s%2Fg%2F11bv5vqq7z?entry=ttu",
+      "instagram_link": "https://www.instagram.com/lite.chicago/",
+      "address": "LITE Chicago, 215 W Ontario St, Chicago, IL 60654",
+      "coordinates": [
+        41.8929405,
+        -87.63479342437458
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "LiqrBox",
+      "location": "River North",
+      "gmap_link": "https://www.google.com/maps/place/LiqrBox/@41.8986853,-87.6369575,15z/data=!4m6!3m5!1s0x880fd34a43a89267:0x4c9316b7d6ac49b6!8m2!3d41.8986853!4d-87.6369575!16s%2Fg%2F11hbfjhnw3?entry=ttu",
+      "instagram_link": "https://www.instagram.com/liqrboxchi/?hl=en",
+      "address": "LiqrBox, 873 N Orleans St, Chicago, IL 60610",
+      "coordinates": [
+        41.89868305,
+        -87.63695054930189
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "Havana",
+      "location": "River North",
+      "gmap_link": "https://www.google.com/maps/place/Havana+Grill/@41.889655,-87.6312732,15z/data=!4m6!3m5!1s0x880e2cb1708fc40d:0xd656771dafba193c!8m2!3d41.889655!4d-87.6312732!16s%2Fg%2F1ydpp3ptc?entry=ttu",
+      "instagram_link": "https://instagram.com/havanagrillchicago/?hl=en",
+      "address": "Havana Grill, 412 N Clark St, Chicago, IL 60654",
+      "coordinates": [
+        41.8896818,
+        -87.6314633
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "Celest",
+      "location": "River North",
+      "gmap_link": "https://www.google.com/maps/place/Celeste/@41.88989,-87.6316379,15z/data=!4m6!3m5!1s0x880e2cb1652e060f:0x778a766dc4024eca!8m2!3d41.88989!4d-87.6316379!16s%2Fg%2F1ptx3yjcm?entry=ttu",
+      "instagram_link": "https://www.instagram.com/celestechicago/?hl=en",
+      "address": "Celeste, 111 W Hubbard St, Chicago, IL 60654",
+      "coordinates": [
+        41.8898493,
+        -87.631628
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "Point and Feather",
+      "location": "River North",
+      "gmap_link": "https://www.google.com/maps/place/Point+%26+Feather/@41.8898752,-87.6318056,15z/data=!4m6!3m5!1s0x880e2cb1659c8b19:0xa8944c624fa57d57!8m2!3d41.8898752!4d-87.6318056!16s%2Fg%2F11gcxzxy4b?entry=ttu",
+      "instagram_link": "https://www.instagram.com/pointandfeather/?hl=en",
+      "address": "Point & Feather, 113 W Hubbard St, Chicago, IL 60654",
+      "coordinates": [
+        32.9315089,
+        -95.8713542
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "Richard's Bar",
+      "location": "West Town",
+      "gmap_link": "https://www.google.com/maps/place/Richard's+Bar/@41.8909676,-87.6469631,15z/data=!4m6!3m5!1s0x880e2ccdde7f43b3:0xf899c44f281c3020!8m2!3d41.8909676!4d-87.6469631!16s%2Fg%2F1v2gfbjq?entry=ttu",
+      "instagram_link": "https://www.instagram.com/richards.bar/",
+      "address": "Richard's Bar, 491 N Milwaukee Ave, Chicago, IL 60654",
+      "coordinates": [
+        41.8910436,
+        -87.6470004
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "The Hideout Inn",
+      "location": "West Town",
+      "gmap_link": "https://www.google.com/maps/place/The+Hideout/@41.9137802,-87.6624977,15z/data=!4m6!3m5!1s0x880fd2de64eab689:0x335730d5ca5ebf70!8m2!3d41.9137802!4d-87.6624977!16s%2Fm%2F0k0264v?entry=ttu",
+      "instagram_link": "https://www.instagram.com/hideoutchicago/?hl=en",
+      "address": "The Hideout, 1354 W Wabansia Ave, Chicago, IL 60642",
+      "coordinates": [
+        41.9139157,
+        -87.6626385
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "Exit",
+      "location": "West Town",
+      "gmap_link": "https://www.google.com/maps/place/Exit/@41.9105032,-87.6609761,15z/data=!4m6!3m5!1s0x880fd2d92c54d5f1:0xc0af88637bb37311!8m2!3d41.9105032!4d-87.6609761!16s%2Fg%2F1vxf_s1t?entry=ttu",
+      "instagram_link": "https://www.instagram.com/exitclub/?hl=en",
+      "address": "Exit, 1315 W North Ave, Chicago, IL 60642",
+      "coordinates": [
+        41.91050775,
+        -87.66100935
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "The Violet Hour",
+      "location": "West Town",
+      "gmap_link": "https://www.google.com/maps/place/The+Violet+Hour/@41.9090947,-87.6775758,15z/data=!4m6!3m5!1s0x880fd2c77b913b6b:0x38233fc388c1e225!8m2!3d41.9090947!4d-87.6775758!16s%2Fm%2F0xmr_q0?entry=ttu",
+      "instagram_link": "https://www.instagram.com/violethourchicago/?hl=en",
+      "address": "The Violet Hour, 1520 N Damen Ave, Chicago, IL 60622",
+      "coordinates": [
+        41.9090451,
+        -87.6775907
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "Emporium Wicker Park",
+      "location": "West Town",
+      "gmap_link": "https://www.google.com/maps/place/Emporium+Arcade+Bar/@41.9066223,-87.6717958,15z/data=!4m6!3m5!1s0x880fd2c5f2912e4d:0x8e0f2bc8c3a0f64a!8m2!3d41.9066223!4d-87.6717958!16s%2Fg%2F11cffwzb4?entry=ttu",
+      "instagram_link": "https://www.instagram.com/emporiumchicago/?hl=en",
+      "address": "Emporium Arcade Bar, 1366 N Milwaukee Ave, Chicago, IL 60622",
+      "coordinates": [
+        41.906454100000005,
+        -87.67184812934738
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "Phyllis' Musical Inn",
+      "location": "West Town",
+      "gmap_link": "https://www.google.com/maps/place/Phyllis%E2%80%99+Musical+Inn/@41.9034362,-87.6725435,15z/data=!4m6!3m5!1s0x880fd2ced60f6aa5:0x959a49a1bb41e493!8m2!3d41.9034362!4d-87.6725435!16s%2Fg%2F1th28_lj?entry=ttu",
+      "instagram_link": "https://www.instagram.com/phyllismusicalinn/?hl=en",
+      "address": "Phyllis’ Musical Inn, 1800 W Division St, Chicago, IL 60622",
+      "coordinates": [
+        41.9035019,
+        -87.67255777625559
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "The Matchbox",
+      "location": "West Town",
+      "gmap_link": "https://www.google.com/maps/place/Matchbox+Bar/@41.8956822,-87.6547963,15z/data=!4m2!3m1!1s0x0:0x3eb87b8cf38c335f?sa=X&ved=2ahUKEwjDu_K2_P2CAxXZFjQIHQcBA-sQ_BJ6BAgSEAA",
+      "instagram_link": "https://www.instagram.com/matchbox_bar/?hl=en",
+      "address": "Matchbox Bar, 770 N Milwaukee Ave, Chicago, IL 60642",
+      "coordinates": [
+        41.8957112,
+        -87.6548491
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "Double Door",
+      "location": "West Town",
+      "gmap_link": "https://www.google.com/maps/place/Double+Door/@41.965582,-87.6567946,15z/data=!4m6!3m5!1s0x880fd385d2556bc5:0x36b125a7a2c8a700!8m2!3d41.965582!4d-87.6567946!16s%2Fg%2F11nclqv3lv?entry=ttu",
+      "instagram_link": "https://www.instagram.com/doubledoor/?hl=en",
+      "address": "Double Door, 1050 W Wilson Ave, Chicago, IL 60640",
+      "coordinates": [
+        41.96549554338342,
+        -87.65639809549195
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "Sidetrack",
+      "location": "Lake View",
+      "gmap_link": "https://www.google.com/maps/place/Sidetrack/@41.9431809,-87.6491605,15z/data=!4m6!3m5!1s0x880fd3af98fd9791:0x5cf0e89c03e67567!8m2!3d41.9431809!4d-87.6491605!16s%2Fg%2F1tdml24d?entry=ttu",
+      "instagram_link": "https://www.instagram.com/explore/locations/71641/sidetrack-the-video-bar/",
+      "address": "Sidetrack, 3349 N Halsted St, Chicago, IL 60657",
+      "coordinates": [
+        41.94334,
+        -87.6490311
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "Elixir Lounge",
+      "location": "Lake View",
+      "gmap_link": "https://www.google.com/maps/place/Elixir+Lounge/@41.962453,-87.6796673,14z/data=!4m10!1m2!2m1!1selixir+lounge!3m6!1s0x880fd3afe0fb9405:0x33aed288b3c909c6!8m2!3d41.9451795!4d-87.6495595!15sCg1lbGl4aXIgbG91bmdlWg8iDWVsaXhpciBsb3VuZ2WSAQxjb2NrdGFpbF9iYXKaASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVTkhaMGxmTmt0UkVBReABAA!16s%2Fg%2F119wbnjy1?entry=ttu",
+      "instagram_link": "https://www.instagram.com/elixirlakeview/?hl=en",
+      "address": "Elixir Lounge, 3452 N Halsted St, Chicago, IL 60657",
+      "coordinates": [
+        41.9452065,
+        -87.6496265
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "Murphy's Bleachers",
+      "location": "Lake View",
+      "gmap_link": "https://www.google.com/maps/place/Murphy's+Bleachers/@41.9489122,-87.6542088,15z/data=!4m6!3m5!1s0x880fd3b3c74eb567:0x904d34b83210af87!8m2!3d41.9489122!4d-87.6542088!16s%2Fg%2F1tgxv4bb?entry=ttu",
+      "instagram_link": "https://www.instagram.com/murphysbleachers/?hl=en",
+      "address": "Murphy's Bleachers, 3655 N Sheffield Ave, Chicago, IL 60613",
+      "coordinates": [
+        41.948428018459616,
+        -87.65425524881664
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "The Long Room",
+      "location": "Lake View",
+      "gmap_link": "https://www.google.com/maps/place/Long+Room+Chicago/@41.9544231,-87.6696958,15z/data=!4m6!3m5!1s0x880fd2479719db69:0x23a8dbcf77a2eaab!8m2!3d41.9544231!4d-87.6696958!16s%2Fg%2F1tmk92jp?entry=ttu",
+      "instagram_link": "https://www.instagram.com/longroomchicago/?hl=en",
+      "address": "Long Room Chicago, 1612 W Irving Park Rd Ste 1, Chicago, IL 60613",
+      "coordinates": [
+        41.9545162,
+        -87.6697345
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "Will's Northwoods Inn",
+      "location": "Lake View",
+      "gmap_link": "https://www.google.com/maps/place/Will's+Northwoods+Inn/@41.9372595,-87.6590706,15z/data=!4m6!3m5!1s0x880fd2553ba519ab:0xeda093e8df9e8936!8m2!3d41.9372595!4d-87.6590706!16s%2Fg%2F1tdy9nxx?entry=ttu",
+      "instagram_link": "https://www.instagram.com/willsnorthwoods/?hl=en",
+      "address": "Will's Northwoods Inn, 3030 N Racine Ave, Chicago, IL 60657",
+      "coordinates": [
+        41.9372356,
+        -87.6590804
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "Elbo Room",
+      "location": "Lake View",
+      "gmap_link": "https://www.google.com/maps/place/Elbo+Room/@39.34625,-84.5422833,15z/data=!4m6!3m5!1s0x884048bd7e95d73b:0x81e73b2a242a48b9!8m2!3d39.34625!4d-84.5422833!16s%2Fg%2F1v6p4zjk?entry=ttu",
+      "instagram_link": "https://www.instagram.com/elboroomlive/",
+      "address": "Elbo Room, 1115 Magie Ave, Fairfield, OH 45014",
+      "coordinates": [
+        39.3463599616462,
+        -84.54228904425904
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "The Duke of Perth",
+      "location": "Lake View",
+      "gmap_link": "https://www.google.com/maps/place/Duke+Of+Perth/@41.9352508,-87.6466672,15z/data=!4m6!3m5!1s0x880fd308278e03d7:0x99b300dc901c0b9e!8m2!3d41.9352508!4d-87.6466672!16s%2Fg%2F1ts_766q?entry=ttu",
+      "instagram_link": "https://www.instagram.com/dukeofperth/?hl=en",
+      "address": "Duke Of Perth, 2913 N Clark St, Chicago, IL 60657",
+      "coordinates": [
+        41.9352735,
+        -87.6466516
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "Blind Barber",
+      "location": "West Loop",
+      "gmap_link": "https://www.google.com/maps/place/Blind+Barber/@41.8869932,-87.6517574,15z/data=!4m6!3m5!1s0x880e2cd0935c8b7d:0x7f0ad86dfe878260!8m2!3d41.8869932!4d-87.6517574!16s%2Fg%2F11g9j45z24?entry=ttu",
+      "instagram_link": "https://www.instagram.com/blindbarber_chicago/?hl=en",
+      "address": "Blind Barber, 948 W Fulton Market, Chicago, IL 60607",
+      "coordinates": [
+        41.8868857,
+        -87.6517588
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "Haymarket Pub & Brewery",
+      "location": "West Loop",
+      "gmap_link": "https://www.google.com/maps/place/Haymarket+Pub+%26+Brewery/@41.8841667,-87.6472222,15z/data=!4m6!3m5!1s0x880e2cc53db2e5c1:0xc44e23d86e2afcb4!8m2!3d41.8841667!4d-87.6472222!16s%2Fg%2F1tf16g94?entry=ttu",
+      "instagram_link": "https://www.instagram.com/explore/locations/1011420/haymarket-pub-brewery/?hl=en",
+      "address": "Haymarket Pub & Brewery, 737 W Randolph St, Chicago, IL 60661",
+      "coordinates": [
+        41.8841895,
+        -87.6472956
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "Lone Wolf Tavern",
+      "location": "West Loop",
+      "gmap_link": "https://www.google.com/maps/place/Lone+Wolf/@41.8846161,-87.6478096,15z/data=!4m2!3m1!1s0x0:0x68ac213e89d25241?sa=X&ved=2ahUKEwjF9LqPhf6CAxUHDDQIHe_BBqwQ_BJ6BAgQEAA",
+      "instagram_link": "https://www.instagram.com/lonewolftavern/",
+      "address": "Lone Wolf, 806 W Randolph St, Chicago, IL 60607",
+      "coordinates": [
+        41.88459908163265,
+        -87.64765918367347
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "Good Night John Boy",
+      "location": "West Loop",
+      "gmap_link": "https://www.google.com/maps/place/Good+Night+John+Boy/@41.8840976,-87.6499845,15z/data=!4m2!3m1!1s0x0:0xd5795a0349184d9e?sa=X&ved=2ahUKEwiA-viFkf6CAxU1HjQIHYEnBYoQ_BJ6BAhuEAA",
+      "instagram_link": "https://www.instagram.com/johnboychicago/?hl=en",
+      "address": "Good Night John Boy, 905 W Randolph St, Chicago, IL 60607",
+      "coordinates": [
+        41.8841859,
+        -87.6501448
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "Transit Nightclub",
+      "location": "West Loop",
+      "gmap_link": "https://www.google.com/maps/place/Transit/@41.8852747,-87.6636593,15z/data=!4m2!3m1!1s0x0:0xeb9fe69138c4f0b1?sa=X&ved=2ahUKEwjL-_yihf6CAxV2PDQIHTV8AEAQ_BJ6BAgREAA",
+      "instagram_link": "https://www.instagram.com/transitnightclubchicago/?hl=en",
+      "address": "Transit, 1431 W Lake St, Chicago, IL 60607",
+      "coordinates": [
+        41.8851218,
+        -87.66374297331039
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "SPIN Chicago",
+      "location": "Fulton Market",
+      "gmap_link": "https://www.google.com/maps/place/SPIN+Chicago/@41.8886781,-87.6283111,15z/data=!4m6!3m5!1s0x880e2cae2595fbf5:0x9f2045b00877336!8m2!3d41.8886781!4d-87.6283111!16s%2Fg%2F11b808ns0j?entry=ttu",
+      "instagram_link": "https://www.instagram.com/explore/locations/757786404392005/spin-chicago/",
+      "address": "SPIN Chicago, 344 N State St, Chicago, IL 60654",
+      "coordinates": [
+        41.8886729,
+        -87.6287013
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "Carnivale",
+      "location": "Fulton Market",
+      "gmap_link": "https://www.google.com/maps/place/Carnivale/@41.8869731,-87.6460081,15z/data=!4m6!3m5!1s0x880e2ccf9f3efab9:0x56ba0879346f24f!8m2!3d41.8869731!4d-87.6460081!16s%2Fg%2F1tsjf6wm?entry=ttu",
+      "instagram_link": "https://www.instagram.com/carnivalechi/?hl=en",
+      "address": "Carnivale, 702 West Fulton Market Street, 702 W Fulton St, Chicago, IL 60661",
+      "coordinates": [
+        41.8871143,
+        -87.6460757
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "Bandit",
+      "location": "Fulton Market",
+      "gmap_link": "https://www.google.com/maps/place/Bandit/@41.884075,-87.6491288,15z/data=!4m6!3m5!1s0x880e2dd0ef752f07:0x54973278b2cc46fb!8m2!3d41.884075!4d-87.6491288!16s%2Fg%2F11h718lwb8?entry=ttu",
+      "instagram_link": "https://www.instagram.com/banditliquors/?hl=en",
+      "address": "Bandit, 841 W Randolph St, Chicago, IL 60607",
+      "coordinates": [
+        41.8845937244898,
+        -87.64795775510204
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "Moneygun",
+      "location": "Fulton Market",
+      "gmap_link": "https://www.google.com/maps/place/Moneygun/@41.8858416,-87.6451703,15z/data=!4m6!3m5!1s0x880e2ccf64a38a97:0xfa81421f0e5506d9!8m2!3d41.8858416!4d-87.6451703!16s%2Fg%2F11cnmz03xn?entry=ttu",
+      "instagram_link": "https://www.instagram.com/moneygunchicago/",
+      "address": "Moneygun, 660 W Lake St, Chicago, IL 60661",
+      "coordinates": [
+        41.8858571,
+        -87.6451137
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "Lazy Bird",
+      "location": "Fulton Market",
+      "gmap_link": "https://www.google.com/maps/place/Lazy+Bird/@41.8858183,-87.6493369,15z/data=!4m6!3m5!1s0x880e2dc060262e49:0xc63ff30bbd9214e5!8m2!3d41.8858183!4d-87.6493369!16s%2Fg%2F11h6sb6rpb?entry=ttu",
+      "instagram_link": "https://www.instagram.com/lazybirdchicago/?hl=en",
+      "address": "Lazy Bird, 200 N Green St, Chicago, IL 60607",
+      "coordinates": [
+        41.8858782,
+        -87.6488678
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "ROOF on theWit",
+      "location": "Fulton Market",
+      "gmap_link": "https://www.google.com/maps/place/ROOF+on+theWit/@41.8860414,-87.6276233,15z/data=!4m6!3m5!1s0x880e2caffa80b61f:0x4b5a64ce88bb1e10!8m2!3d41.8860414!4d-87.6276233!16s%2Fg%2F1tdww8dd?entry=ttu",
+      "instagram_link": "https://www.instagram.com/roofonthewit/?hl=en",
+      "address": "ROOF on theWit, 201 N State St 27th Floor, Chicago, IL 60601",
+      "coordinates": [
+        41.886084,
+        -87.6276358
+      ]
+    },
+    {
+      "type": "Club",
+      "name": "The Aviary",
+      "location": "Fulton Market",
+      "gmap_link": "https://www.google.com/maps/place/The+Aviary/@41.8865074,-87.6519833,15z/data=!4m6!3m5!1s0x880e2cd096f5eddd:0x3891a942b067e367!8m2!3d41.8865074!4d-87.6519833!16s%2Fm%2F0zd5h2r?entry=ttu",
+      "instagram_link": "https://www.instagram.com/aviarycocktails/?hl=en",
+      "address": "The Aviary, 955 W Fulton Market, Chicago, IL 60607",
+      "coordinates": [
+        41.8865101,
+        -87.6519209
+      ]
+    }
+  ]

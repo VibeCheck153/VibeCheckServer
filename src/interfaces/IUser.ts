@@ -21,7 +21,6 @@ export interface IUser{
 
 export class UserFactory {
     static createUserFromRecord(record: any, secretKey: string): IUser {
-        console.log(record.get('dob'));
       return {
         uid: encrypt(record.get('uid'))["encryptedData"],
         username: record.get('username'),
