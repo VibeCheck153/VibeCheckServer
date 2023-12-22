@@ -170,15 +170,13 @@ export default class UserController {
           RETURN u.uid as uid, u.email as email, u.username as username;
         `;
       const createResult = await session.run(createQuery);
-      console.log(createResult.records[0]);
       const token = Jwt.sign(
         { uid: createResult.records[0]['_fields'][0], email: createResult.records[0]['_fields'][1] },
         config.jwtAccessTokenSecret,
         {
-          expiresIn: '120d',
+          expiresIn: '365d',
         },
       );
-      console.log(token);
 
       return res.status(200).json({ status: 200, data: 'User created successfully!' });
     } catch (error) {

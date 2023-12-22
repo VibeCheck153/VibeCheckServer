@@ -21,12 +21,12 @@ export class VenueFactory {
         id: record.get('id'),
         type: record.get('type'),
         name: record.get('name'),
-        desc: record.get('desc'),
-        gmap_link: record.get('googleMaps'),
-        instagram_link: record.get('instagramLink'),
+        desc: record.get('desc') ?? null,
+        gmap_link: record.get('gmap_link'),
+        instagram_link: record.get('instagram_link'),
         address: record.get('address'),
         location: record.get('location'),
-        coordinates: {latitude: record.get('coordinates')[0], longitude:record.get('coordinates')[2]},
+        coordinates: {latitude: record.get('coordinates')[0], longitude:record.get('coordinates')[1]},
       };
     }
   }

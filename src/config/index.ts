@@ -22,6 +22,7 @@ export default {
   jwtAccessTokenSecret: process.env.JWT_ACCESS_TOKEN_SECRET,
   jwtRefreshTokenSecret: process.env.JWT_REFRESH_TOKEN_SECRET,
   secretKey: process.env.SECRET_KEY,
+  jwtAdminToken: process.env.JWT_ADMIN_TOKEN,
 
   dbUser: process.env.DB_USER,
   dbPass: process.env.DB_PASSWORD,
