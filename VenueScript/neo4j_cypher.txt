@@ -1,0 +1,179 @@
+// Pop
+CREATE (pop:Genre {name: 'Pop', description: 'Pop Pulse - Dance Vibes to blow your mind'})
+CREATE (teenPop:SubGenre {name: 'Teen Pop'})
+CREATE (popRock:SubGenre {name: 'Pop Rock'})
+CREATE (popRap:SubGenre {name: 'Pop Rap'})
+CREATE (electroPop:SubGenre {name: 'Electro Pop'})
+CREATE (indiePop:SubGenre {name: 'Indie Pop'})
+CREATE (kPop:SubGenre {name: 'K-Pop'})
+CREATE (latinPop:SubGenre {name: 'Latin Pop'})
+
+CREATE (pop)-[:SUB_GENRE]->(teenPop)
+CREATE (pop)-[:SUB_GENRE]->(popRock)
+CREATE (pop)-[:SUB_GENRE]->(popRap)
+CREATE (pop)-[:SUB_GENRE]->(electroPop)
+CREATE (pop)-[:SUB_GENRE]->(indiePop)
+CREATE (pop)-[:SUB_GENRE]->(kPop)
+CREATE (pop)-[:SUB_GENRE]->(latinPop);
+
+// Rock
+CREATE (rock:Genre {name: 'Rock', description: 'Amped Anthems - A mix of high-voltage rock genres to amplify your energy'})
+CREATE (classicRock:SubGenre {name: 'Classic Rock'})
+CREATE (altRock:SubGenre {name: 'Alternative Rock'})
+CREATE (indieRock:SubGenre {name: 'Indie Rock'})
+CREATE (hardRock:SubGenre {name: 'Hard Rock'})
+CREATE (punkRock:SubGenre {name: 'Punk Rock'})
+CREATE (heavyMetal:SubGenre {name: 'Heavy Metal'})
+CREATE (folkRock:SubGenre {name: 'Folk Rock'})
+
+CREATE (rock)-[:SUB_GENRE]->(classicRock)
+CREATE (rock)-[:SUB_GENRE]->(altRock)
+CREATE (rock)-[:SUB_GENRE]->(indieRock)
+CREATE (rock)-[:SUB_GENRE]->(hardRock)
+CREATE (rock)-[:SUB_GENRE]->(punkRock)
+CREATE (rock)-[:SUB_GENRE]->(heavyMetal)
+CREATE (rock)-[:SUB_GENRE]->(folkRock);
+
+// Hip-hop/Rap
+CREATE (hiphop:Genre {name: 'Hip-hop/Rap', description: 'Urban Pulse - Hip-hop beats from the streets'})
+CREATE (gangstaRap:SubGenre {name: 'Gangsta Rap'})
+CREATE (trap:SubGenre {name: 'Trap'})
+CREATE (mumbleRap:SubGenre {name: 'Mumble Rap'})
+CREATE (eastCoastWestCoast:SubGenre {name: 'East Coast/West Coast Hip Hop'})
+CREATE (consciousHipHop:SubGenre {name: 'Conscious Hip Hop'})
+CREATE (oldSchoolHipHop:SubGenre {name: 'Old School Hip Hop'})
+CREATE (altHipHop:SubGenre {name: 'Alternative Hip Hop'})
+
+CREATE (hiphop)-[:SUB_GENRE]->(gangstaRap)
+CREATE (hiphop)-[:SUB_GENRE]->(trap)
+CREATE (hiphop)-[:SUB_GENRE]->(mumbleRap)
+CREATE (hiphop)-[:SUB_GENRE]->(eastCoastWestCoast)
+CREATE (hiphop)-[:SUB_GENRE]->(consciousHipHop)
+CREATE (hiphop)-[:SUB_GENRE]->(oldSchoolHipHop)
+CREATE (hiphop)-[:SUB_GENRE]->(altHipHop);
+
+// Electronic Dance Music (EDM)
+CREATE (edm:Genre {name: 'Electronic Dance Music (EDM)', description: 'Electric Rush - High-octane tunes to fuel the adrenaline pump'})
+CREATE (house:SubGenre {name: 'House'})
+CREATE (techno:SubGenre {name: 'Techno'})
+CREATE (trance:SubGenre {name: 'Trance'})
+CREATE (drumAndBass:SubGenre {name: 'Drum and Bass'})
+CREATE (dubstep:SubGenre {name: 'Dubstep'})
+CREATE (trapEDM:SubGenre {name: 'Trap EDM'})
+CREATE (hardstyle:SubGenre {name: 'Hardstyle'})
+
+CREATE (edm)-[:SUB_GENRE]->(house)
+CREATE (edm)-[:SUB_GENRE]->(techno)
+CREATE (edm)-[:SUB_GENRE]->(trance)
+CREATE (edm)-[:SUB_GENRE]->(drumAndBass)
+CREATE (edm)-[:SUB_GENRE]->(dubstep)
+CREATE (edm)-[:SUB_GENRE]->(trapEDM)
+CREATE (edm)-[:SUB_GENRE]->(hardstyle);
+
+// Country
+CREATE (country:Genre {name: 'Country', description: 'Classic Country - Country tunes that take you down memory lane'})
+CREATE (classicCountry:SubGenre {name: 'Classic Country'})
+CREATE (popCountry:SubGenre {name: 'Pop Country'})
+CREATE (bluegrass:SubGenre {name: 'Bluegrass'})
+CREATE (outlawCountry:SubGenre {name: 'Outlaw Country'})
+CREATE (altCountry:SubGenre {name: 'Alternative Country'})
+CREATE (countryRock:SubGenre {name: 'Country Rock'})
+CREATE (americana:SubGenre {name: 'Americana'})
+
+CREATE (country)-[:SUB_GENRE]->(classicCountry)
+CREATE (country)-[:SUB_GENRE]->(popCountry)
+CREATE (country)-[:SUB_GENRE]->(bluegrass)
+CREATE (country)-[:SUB_GENRE]->(outlawCountry)
+CREATE (country)-[:SUB_GENRE]->(altCountry)
+CREATE (country)-[:SUB_GENRE]->(countryRock)
+CREATE (country)-[:SUB_GENRE]->(americana);
+
+// Jazz
+CREATE (jazz:Genre {name: 'Jazz', description: 'Swing & Smooth - Where Rhythms Dance and Melodies Flow'})
+CREATE (swing:SubGenre {name: 'Swing'})
+CREATE (bebop:SubGenre {name: 'Bebop'})
+CREATE (fusion:SubGenre {name: 'Fusion'})
+CREATE (smoothJazz:SubGenre {name: 'Smooth Jazz'})
+CREATE (freeJazz:SubGenre {name: 'Free Jazz'})
+CREATE (acidJazz:SubGenre {name: 'Acid Jazz'})
+CREATE (modalJazz:SubGenre {name: 'Modal Jazz'})
+
+CREATE (jazz)-[:SUB_GENRE]->(swing)
+CREATE (jazz)-[:SUB_GENRE]->(bebop)
+CREATE (jazz)-[:SUB_GENRE]->(fusion)
+CREATE (jazz)-[:SUB_GENRE]->(smoothJazz)
+CREATE (jazz)-[:SUB_GENRE]->(freeJazz)
+CREATE (jazz)-[:SUB_GENRE]->(acidJazz)
+CREATE (jazz)-[:SUB_GENRE]->(modalJazz);
+
+// Classical
+CREATE (classical:Genre {name: 'Classical', description: 'Timeless Harmonies - Elegance in Every Note'})
+CREATE (baroque:SubGenre {name: 'Baroque'})
+CREATE (romantic:SubGenre {name: 'Romantic'})
+CREATE (modern:SubGenre {name: 'Modern'})
+CREATE (contemporary:SubGenre {name: 'Contemporary'})
+CREATE (chamberMusic:SubGenre {name: 'Chamber Music'})
+CREATE (opera:SubGenre {name: 'Opera'})
+CREATE (choral:SubGenre {name: 'Choral'})
+
+CREATE (classical)-[:SUB_GENRE]->(baroque)
+CREATE (classical)-[:SUB_GENRE]->(romantic)
+CREATE (classical)-[:SUB_GENRE]->(modern)
+CREATE (classical)-[:SUB_GENRE]->(contemporary)
+CREATE (classical)-[:SUB_GENRE]->(chamberMusic)
+CREATE (classical)-[:SUB_GENRE]->(opera)
+CREATE (classical)-[:SUB_GENRE]->(choral);
+
+// R&B/Soul
+CREATE (randb:Genre {name: 'R&B/Soul', description: 'Soulful - A deep dive into the heart of music that stirs the soul'})
+CREATE (contemporaryRandB:SubGenre {name: 'Contemporary R&B'})
+CREATE (funk:SubGenre {name: 'Funk'})
+CREATE (soul:SubGenre {name: 'Soul'})
+CREATE (neoSoul:SubGenre {name: 'Neo-Soul'})
+CREATE (psychedelicSoul:SubGenre {name: 'Psychedelic Soul'})
+CREATE (motown:SubGenre {name: 'Motown'})
+CREATE (quietStorm:SubGenre {name: 'Quiet Storm'})
+
+CREATE (randb)-[:SUB_GENRE]->(contemporaryRandB)
+CREATE (randb)-[:SUB_GENRE]->(funk)
+CREATE (randb)-[:SUB_GENRE]->(soul)
+CREATE (randb)-[:SUB_GENRE]->(neoSoul)
+CREATE (randb)-[:SUB_GENRE]->(psychedelicSoul)
+CREATE (randb)-[:SUB_GENRE]->(motown)
+CREATE (randb)-[:SUB_GENRE]->(quietStorm);
+
+// Indie/Alternative
+CREATE (indie:Genre {name: 'Indie/Alternative', description: 'Chillscapes - Drift off on a cloud of laid-back rhythms'})
+CREATE (indieRock2:SubGenre {name: 'Indie Rock'})
+CREATE (indiePop2:SubGenre {name: 'Indie Pop'})
+CREATE (lofi:SubGenre {name: 'Lo-fi'})
+CREATE (altRock2:SubGenre {name: 'Alternative Rock'})
+CREATE (shoegaze:SubGenre {name: 'Shoegaze'})
+CREATE (dreamPop:SubGenre {name: 'Dream Pop'})
+CREATE (chillwave:SubGenre {name: 'Chillwave'})
+
+CREATE (indie)-[:SUB_GENRE]->(indieRock2)
+CREATE (indie)-[:SUB_GENRE]->(indiePop2)
+CREATE (indie)-[:SUB_GENRE]->(lofi)
+CREATE (indie)-[:SUB_GENRE]->(altRock2)
+CREATE (indie)-[:SUB_GENRE]->(shoegaze)
+CREATE (indie)-[:SUB_GENRE]->(dreamPop)
+CREATE (indie)-[:SUB_GENRE]->(chillwave);
+
+// Latin
+CREATE (latin:Genre {name: 'Latin', description: 'Fiesta Beats - A colorful cocktail of Latin genres'})
+CREATE (reggaeton:SubGenre {name: 'Reggaeton'})
+CREATE (latinTrap:SubGenre {name: 'Latin Trap'})
+CREATE (bachata:SubGenre {name: 'Bachata'})
+CREATE (salsa:SubGenre {name: 'Salsa'})
+CREATE (cumbia:SubGenre {name: 'Cumbia'})
+CREATE (latinPop2:SubGenre {name: 'Latin Pop'})
+CREATE (latinBallad:SubGenre {name: 'Latin Ballad'})
+
+CREATE (latin)-[:SUB_GENRE]->(reggaeton)
+CREATE (latin)-[:SUB_GENRE]->(latinTrap)
+CREATE (latin)-[:SUB_GENRE]->(bachata)
+CREATE (latin)-[:SUB_GENRE]->(salsa)
+CREATE (latin)-[:SUB_GENRE]->(cumbia)
+CREATE (latin)-[:SUB_GENRE]->(latinPop2)
+CREATE (latin)-[:SUB_GENRE]->(latinBallad);

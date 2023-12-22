@@ -42,6 +42,9 @@
     "mongodb": "^6.2.0",
     "mongoose": "^8.0.0",
     "morgan": "^1.10.0",
+    "neo4j-driver": "^5.15.0",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
     "reflect-metadata": "^0.1.13",
     "typedi": "^0.10.0",
     "winston": "^3.11.0"

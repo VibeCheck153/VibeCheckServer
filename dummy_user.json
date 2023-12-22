@@ -1,0 +1,12 @@
+{
+	"uid": "1d6a9dda-9c5f-11ee-8c90-0242ac120002",
+	"username": "VibeUser",
+	"email": "vibe@gmail.com",
+	"age": 22,
+	"dob": "2023-12-16T23:15:05+0000",
+	"photoURL": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png",
+	"location": [0, 0],
+	"likes": 0,
+	"vibePoints": 0,
+	"level": 1
+}

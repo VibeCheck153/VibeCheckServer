@@ -10,5 +10,7 @@ declare global {
 
   namespace Models {
     export type testModel = Model<ITest & Document>
+    export type userModel = Model<IUser & Document>
+    export type venueModel = Model<IVenue & Document>
   }
 }

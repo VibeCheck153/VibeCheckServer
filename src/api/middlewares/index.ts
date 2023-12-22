@@ -1,5 +1,5 @@
-import attachCurrentUser from './attachCurrentUser';
+import checkAuth from './attachCurrentUser';
 
 export default {
-  attachCurrentUser,
+  attachCurrentUser: checkAuth,
 };

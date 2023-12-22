@@ -4,7 +4,7 @@ import { Logger } from 'winston';
 import config from '../../config'
 
 
-const checkAuth = async (req, res, next) => {
+const checkAdmin = async (req, res, next) => {
   const logger: Logger = Container.get('logger');
   try {
     const authHeader = req.headers['authorization']
@@ -15,12 +15,16 @@ const checkAuth = async (req, res, next) => {
     try{
       if (authHeader && authHeader.includes('Bearer')) {
         let token =  authHeader.split(' ')[1]
-        var decoded = verify(
-          token,
-          config.jwtAccessTokenSecret
-        );
-        req.isTokenPresent = true;
-        return next();
+        if (token == config.jwtAdminToken){
+            var decoded = verify(
+                token,
+                config.jwtAccessTokenSecret
+              );
+              req.isTokenPresent = true;
+              return next();
+        } else{
+            return res.sendStatus(401).send('Only Admin access');
+        }
       }else{
         return res.sendStatus(401).send('Access denied')
       }
@@ -37,4 +41,4 @@ const checkAuth = async (req, res, next) => {
   }
 };
 
-export default checkAuth;
+export default checkAdmin;

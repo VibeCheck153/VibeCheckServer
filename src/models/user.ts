@@ -6,7 +6,7 @@ import { IUser } from "../interfaces/IUser";
  * 1. ID
  * 2. PhotoURL
  * 3. Username
- * 4. Password
+ * 4. VibePoints
  * 5. Date of Birth
  * 6. Location
  * 7. Email
@@ -16,12 +16,6 @@ import { IUser } from "../interfaces/IUser";
 
 const User = new mongoose.Schema(
     {
-        _id: {
-            type: Schema.Types.UUID,
-            require: true,
-            unique: true,
-            index: true
-        },
         username:{
             type: String,
             require: true,
@@ -40,11 +34,13 @@ const User = new mongoose.Schema(
             unique: true,
             validate: (value: string) => value.endsWith("@gmail.com")
         },
-        //! Come up with the extension
-        password:{},
         dob: {
             type: Date,
             require: true,
+        },
+        age: {
+            type: Number,
+            require: false,
         },
         //! PointSchema, 2dIndex
         location:{
@@ -55,7 +51,22 @@ const User = new mongoose.Schema(
                 ["longitude", 180]
             ]
             )
-        }
+        },
+        likes: {
+            type: Number,
+            require: false,
+            default: 0
+        },
+        vibePoints: {
+            type: Number,
+            require: false,
+            default: 0
+        },
+        level: {
+            type: Number,
+            require: false,
+            default: 1
+        },
     }
 );
 
