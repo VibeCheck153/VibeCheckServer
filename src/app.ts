@@ -14,7 +14,7 @@ async function startServer() {
   app.listen(config.port, () => {
     Logger.info(`
     ################################################
-    🛡️ Database Server connected on : ${config.databaseURL.slice(0, 25)} 🛡️
+    🛡️ Database Server connected on : VibeCheckServer 🛡️
     ################################################
   `);
     
