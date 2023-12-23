@@ -13,17 +13,17 @@ jobs:
       - name: Login to docker hub
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       - name: Build docker image
-        run: docker build -t vibecheck/VibeCheckServer .
+        run: docker build -t vibecheck/vibecheckserver .
       - name: Publish image to docker hub
-        run: docker push vibecheck/VibeCheckServer:latest
+        run: docker push vibecheck/vibecheckserver:latest
   
   deploy:
     needs: build
     runs-on: [ip-172-31-14-250]
     steps:
       - name: Pull image from docker hub
-        run: docker pull vibecheck/VibeCheckServer:latest
+        run: docker pull vibecheck/vibecheckserver:latest
       - name: Delete old container
-        run: docker rm -f VibeCheckServer-container
+        run: docker rm -f vibecheckserver-container
       - name: Run docker container
-        run: docker run -d -p 3500:3500 -name VibeCheckServer-container vibecheck/VibeCheckServer
+        run: docker run -d -p 3500:3500 -name vibecheckserver-container vibecheck/vibecheckserver
