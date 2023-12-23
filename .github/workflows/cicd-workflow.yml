@@ -26,4 +26,4 @@ jobs:
       - name: Delete old container
         run: docker rm -f vibecheckserver-container
       - name: Run docker container
-        run: docker run -d -p 3500:3500 --name vibecheckserver-container vibecheck/vibecheckserver
+        run: docker run -d -p 18.117.229.185:3500:3500 --name vibecheckserver-container vibecheck/vibecheckserver
