@@ -19,7 +19,7 @@ jobs:
   
   deploy:
     needs: build
-    runs-on: [ip-172-31-14-250]
+    runs-on: self-hosted
     steps:
       - name: Pull image from docker hub
         run: docker pull vibecheck/vibecheckserver:latest
