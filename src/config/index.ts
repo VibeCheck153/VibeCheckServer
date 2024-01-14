@@ -29,6 +29,10 @@ export default {
   dbHost: process.env.DB_HOST,
   dbName: process.env.DB_NAME,
 
+  awsAccessKey: process.env.AWS_ACCESS_KEY_ID,
+  awsSecretKey: process.env.AWS_SECRET_ACCESS_KEY,
+  awsBucketName: process.env.AWS_BUCKET_NAME,
+
   logs: {
     level: process.env.LOG_LEVEL || 'silly',
   },
