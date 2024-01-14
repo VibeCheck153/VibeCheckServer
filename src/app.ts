@@ -6,6 +6,8 @@ import express from 'express';
 
 import Logger from './loaders/logger';
 
+import {swaggerDocs} from '../src/utils/swagger';
+
 async function startServer() {
   const app = express();
 
@@ -23,6 +25,8 @@ async function startServer() {
       🛡️ Server listening on port: ${config.port} 🛡️
       ################################################
     `);
+
+    swaggerDocs(app, config.port);
   }).on('error', err => {
     Logger.error(err);
     process.exit(1);
