@@ -1,4 +1,4 @@
-import express,  { NextFunction, Request, Response } from 'express';
+import express, { NextFunction, Request, Response } from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import routes from '../api';
@@ -9,7 +9,7 @@ import Logger from './logger';
 import morgan from 'morgan';
 
 export default ({ app }: { app: express.Application }) => {
-  app.use(morgan("dev"));
+  app.use(morgan('dev'));
 
   const errorHandler = new ErrorHandler(Logger);
 
@@ -23,8 +23,8 @@ export default ({ app }: { app: express.Application }) => {
   }
 
   app.get('/status', (req, res) => {
-    const now = new Date()
-    const ep = Math.round(now.getTime() / 1000)
+    const now = new Date();
+    const ep = Math.round(now.getTime() / 1000);
     res.status(200).send(ep.toString()).end();
   });
 
@@ -36,7 +36,7 @@ export default ({ app }: { app: express.Application }) => {
 
   app.use(cors());
 
-  app.set("view engine", "ejs");
+  app.set('view engine', 'ejs');
 
   app.use(require('method-override')());
 
@@ -57,10 +57,7 @@ export default ({ app }: { app: express.Application }) => {
      * Handle 401 thrown by express-jwt library
      */
     if (err.name === 'UnauthorizedError') {
-      return res
-        .status(err.status)
-        .send({ message: err.message })
-        .end();
+      return res.status(err.status).send({ message: err.message }).end();
     }
     return next(err);
   });

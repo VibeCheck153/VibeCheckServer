@@ -3,7 +3,6 @@ import { Service, Inject } from 'typedi';
 
 @Service()
 export default class HelperService {
-
   private hashids: any;
   private hashIdsObj: any;
 
@@ -22,7 +21,7 @@ export default class HelperService {
       if (Object.prototype.hasOwnProperty.call(reqBody, key)) {
         const element = reqBody[key];
         if (element == undefined) {
-          console.debug("Null values found with:", key, element);
+          console.debug('Null values found with:', key, element);
           throw new Error(`Null values found with:${key}, ${element}`);
         }
       }
@@ -35,17 +34,14 @@ export default class HelperService {
   };
 
   public getTokenFromHeader(req: any) {
-    if (
-      (req.headers.authorization && req.headers.authorization.split(' ')[0] === 'Bearer')
-    ) {
+    if (req.headers.authorization && req.headers.authorization.split(' ')[0] === 'Bearer') {
       return req.headers.authorization.split(' ')[1];
     }
     return null;
   }
 
-
   public decodeHash(guId: any): any {
-    if (guId != undefined && guId != "") {
+    if (guId != undefined && guId != '') {
       if (isNaN(guId)) {
         return guId ? this.hashIdsObj.decode(guId)[0] : '';
       } else {
@@ -57,11 +53,10 @@ export default class HelperService {
   }
 
   public encodeHash(guId: any): any {
-    if (guId != undefined && guId != "") {
+    if (guId != undefined && guId != '') {
       return this.isNumber(guId) ? this.hashIdsObj.encode(guId) : guId;
     } else {
-      return "";
+      return '';
     }
   }
-
 }

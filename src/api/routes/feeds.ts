@@ -4,7 +4,6 @@ import { Driver, auth, driver } from 'neo4j-driver';
 import FeedsController from '../controllers/feedsController';
 import checkAuth from '../middlewares/attachCurrentUser';
 import multer from 'multer';
-import {v4 as uuidv4} from 'uuid';
 
   
 const route = Router();
@@ -25,6 +24,7 @@ export default (app: Router) => {
   route.get('/test', checkAuth, feedsController.test);
   route.get('/', checkAuth, feedsController.getFeeds);
   route.get('/all', checkAuth, feedsController.getAllFeeds);
+  route.get('/loc', checkAuth, feedsController.locationDetect);
 
   //* POST CALLS
   // const storage = multer.diskStorage({
@@ -48,10 +48,9 @@ export default (app: Router) => {
 
   const upload = multer({storage, fileFilter, limits: {fileSize: 10000000}});
   
-  route.post('/upload', checkAuth, upload.single("file"), feedsController.uploadFile);
+  route.post('/upload', checkAuth, upload.single("file"), feedsController.uploadVideo);
   route.post('/detect', checkAuth, upload.single("file"), feedsController.musicClassify);
   route.post('/', checkAuth, feedsController.addFeed);
-  route.get('/connect', checkAuth, feedsController.connectGenre);
   
 
   //* PUT CALLS

@@ -3,7 +3,7 @@ import config from '../config';
 
 export default async (): Promise<any> => {
   const connection = await mongoose.connect(config.databaseURL, {
-    appName: "VibeCheck",
+    appName: 'VibeCheck',
     autoIndex: true,
     // useNewUrlParser: true,
     // useUnifiedTopology: true,
@@ -11,9 +11,9 @@ export default async (): Promise<any> => {
     // ssl: true,
     // checkKeys: true,
     // tls: true,
-    
+
     // cert: require('fs').readFileSync(`${__dirname}/mongocerts.crt`)
   });
- 
+
   return connection.connection.db;
 };

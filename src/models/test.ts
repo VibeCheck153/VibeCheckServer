@@ -7,7 +7,7 @@ const Test = new mongoose.Schema(
       type: String,
       required: [true, 'Please enter a full name'],
       index: true,
-    }  
+    },
   },
   { timestamps: true },
 );

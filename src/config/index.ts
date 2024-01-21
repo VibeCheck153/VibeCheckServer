@@ -18,6 +18,7 @@ export default {
 
   googleClientSecret: process.env.GOOGLE_CLIENT_SECRET,
   googleClientID: process.env.GOOGLE_CLIENT_ID,
+  googleLocationApiKey: process.env.GOOGLE_LOC_API,
 
   jwtAccessTokenSecret: process.env.JWT_ACCESS_TOKEN_SECRET,
   jwtRefreshTokenSecret: process.env.JWT_REFRESH_TOKEN_SECRET,
@@ -40,5 +41,4 @@ export default {
   api: {
     prefix: '',
   },
-
 };

@@ -10,13 +10,17 @@ async function convertAndClipMp4ToMp3(inputFile: string, outputFile: string, cli
   return new Promise<void>((resolve, reject) => {
     const ffmpeg = new FfmpegCommand();
 
-    ffmpeg.input(inputFile).audioCodec('libmp3lame').seekInput(clipStartTime).duration(clipEndTime - clipStartTime);
+    ffmpeg
+      .input(inputFile)
+      .audioCodec('libmp3lame')
+      .seekInput(clipStartTime)
+      .duration(clipEndTime - clipStartTime);
 
     ffmpeg.on('end', () => {
       resolve();
     });
 
-    ffmpeg.on('error', (err) => {
+    ffmpeg.on('error', err => {
       reject(err);
     });
 
@@ -34,7 +38,7 @@ async function convertToMono(inputFile: string, outputFile: string) {
       resolve();
     });
 
-    ffmpeg.on('error', (err) => {
+    ffmpeg.on('error', err => {
       reject(err);
     });
 
@@ -45,17 +49,12 @@ async function convertToMono(inputFile: string, outputFile: string) {
 async function convertToRaw(inputFile: string): Promise<Buffer> {
   return new Promise<Buffer>((resolve, reject) => {
     const transcoder = new prism.FFmpeg({
-      args: [
-        '-i', inputFile,
-        '-f', 's16le',
-        '-acodec', 'pcm_s16le',
-        '-ar', '48000',
-      ],
+      args: ['-i', inputFile, '-f', 's16le', '-acodec', 'pcm_s16le', '-ar', '48000'],
     });
 
     const chunks: Buffer[] = [];
 
-    transcoder.on('data', (chunk) => {
+    transcoder.on('data', chunk => {
       chunks.push(chunk as Buffer);
     });
 
@@ -63,7 +62,7 @@ async function convertToRaw(inputFile: string): Promise<Buffer> {
       resolve(Buffer.concat(chunks));
     });
 
-    transcoder.on('error', (err) => {
+    transcoder.on('error', err => {
       reject(err);
     });
   });

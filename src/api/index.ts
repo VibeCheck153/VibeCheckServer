@@ -5,11 +5,11 @@ import venue from './routes/venue';
 import feeds from './routes/feeds';
 
 export default () => {
-	const app = Router();
-	test(app);
-	user(app);
-	venue(app);
-	feeds(app);
+  const app = Router();
+  test(app);
+  user(app);
+  venue(app);
+  feeds(app);
 
-	return app
-}
+  return app;
+};

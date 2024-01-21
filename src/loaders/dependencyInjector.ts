@@ -9,7 +9,6 @@ export default ({ mongoConnection, models }: { mongoConnection; models: { name: 
 
     Container.set('logger', LoggerInstance);
     return { logger: LoggerInstance };
-
   } catch (e) {
     LoggerInstance.error('🔥 Error on dependency injector loader: %o', e);
     throw e;

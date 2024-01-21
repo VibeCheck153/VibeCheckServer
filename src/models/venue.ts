@@ -1,6 +1,5 @@
-import mongoose, { Schema } from "mongoose";
-import { IVenue } from "../interfaces/IVenue";
-
+import mongoose, { Schema } from 'mongoose';
+import { IVenue } from '../interfaces/IVenue';
 
 /**
  * Venue parameters
@@ -13,40 +12,36 @@ import { IVenue } from "../interfaces/IVenue";
 
 //Phone, social handle, google, apple
 
-const Venue = new mongoose.Schema(
-    {
-        name:{
-            type: String,
-            require: true,
-            unique: true,
-            lowercase: true,
-        },
-        googleMapsLink:{
-            type: String,
-            require: true,
-        },
-        instagramLink:{
-            type: String,
-            require: false,
-            default: null,
-        },
-        //! PointSchema, 2dIndex
-        location:{
-            type: Map,
-            require: false,
-            default: new Map([
-                ["latitude", 90],
-                ["longitude", 180]
-            ]
-            )
-        },
-        locationString:{
-            type: String,
-            require: false,
-            default: null,
-        },
-    }
-);
+const Venue = new mongoose.Schema({
+  name: {
+    type: String,
+    require: true,
+    unique: true,
+    lowercase: true,
+  },
+  googleMapsLink: {
+    type: String,
+    require: true,
+  },
+  instagramLink: {
+    type: String,
+    require: false,
+    default: null,
+  },
+  //! PointSchema, 2dIndex
+  location: {
+    type: Map,
+    require: false,
+    default: new Map([
+      ['latitude', 90],
+      ['longitude', 180],
+    ]),
+  },
+  locationString: {
+    type: String,
+    require: false,
+    default: null,
+  },
+});
 
-
-export default mongoose.model<IVenue & mongoose.Document>("Venue", Venue);
+export default mongoose.model<IVenue & mongoose.Document>('Venue', Venue);
