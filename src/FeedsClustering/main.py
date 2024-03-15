@@ -1,4 +1,6 @@
-import os
+
+import json
+import sys
 import requests
 import base64
 from pydub import AudioSegment
@@ -52,9 +54,10 @@ def extract_audio_from_video():
 
     querystring = {"timezone": "America/Chicago", "locale": "en-US"}
 
-    convert_and_clip_mp4_to_mp3("src/FeedsClustering/test.mp4", "test.mp3")
-    convert_to_mono("src/FeedsClustering/test.mp3", "mono.mp3")
-    raw = convert_to_raw("src/FeedsClustering/mono.mp3")
+    convert_and_clip_mp4_to_mp3(f"src/FeedsClustering/{sys.argv[1]}", f"src/FeedsClustering/{sys.argv[1]}.mp3")
+        
+    convert_to_mono(f"src/FeedsClustering/{sys.argv[1]}.mp3", f"src/FeedsClustering/{sys.argv[1]}.mp3")
+    raw = convert_to_raw(f"src/FeedsClustering/{sys.argv[1]}.mp3")
 
     payload = raw_audio_to_base64(raw)
 
@@ -66,7 +69,6 @@ def extract_audio_from_video():
 
     response = requests.post(url, data=payload, headers=headers, params=querystring)
 
-    print(response.status_code)
     print(response.json())
 
     return response.json()

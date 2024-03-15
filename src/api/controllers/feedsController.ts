@@ -6,6 +6,8 @@ import runPythonScript from '../../services/music_python_classify';
 import config from '../../config';
 import { FeedFactory, IFeed } from '../../interfaces/IFeed';
 import axios from 'axios';
+import LoggerInstance from '../../loaders/logger';
+import matchGenre from '../../services/genre_detect';
 
 export default class FeedsController {
   private db: Driver;
@@ -53,15 +55,54 @@ export default class FeedsController {
 
   public musicClassify = async (req: Request, res: Response, next: NextFunction) => {
     const file = req.file;
+    console.log(file);
     const pythonScriptPath = 'src/FeedsClustering/main.py';
 
     try {
-      const pythonScriptOutput = await runPythonScript(pythonScriptPath);
-      console.log(`Python script output: ${pythonScriptOutput}`);
-      res.send('Python script executed successfully!');
+      const pythonScriptOutput = (await runPythonScript(pythonScriptPath, file.filename)).toString();
+
+      LoggerInstance.debug(pythonScriptOutput)
+
+      const albumMetadataRegex = /\{'{tracktitle}':\s*'([^']*)',\s*'{trackartist}':\s*'([^']*)'\}/;
+      const albumMetadataMatch = pythonScriptOutput.match(albumMetadataRegex);
+      let albumMetadata = albumMetadataMatch ? `${albumMetadataMatch[1]}` : null;
+      let albumArtist = albumMetadataMatch ? albumMetadataMatch[2] : null;
+
+
+      const genresRegex = /'genres':\s*{\s*'primary':\s*'(.*?)'/;
+      const genresMatch = pythonScriptOutput.match(genresRegex);
+      const primaryGenre = genresMatch ? genresMatch[1] : null;
+
+      const matchedGenreOrSubGenre = matchGenre(primaryGenre);
+
+      if (albumMetadata) {
+        let result: { albumMetadata: string, genre: string,  albumArtist: string};
+        let genre: string;
+        albumMetadata = albumMetadata.replace(/\+/g, ' '); // Replacing '+' with space
+        if (matchedGenreOrSubGenre) {
+          genre = matchedGenreOrSubGenre;
+          result = {
+            albumMetadata,
+            genre,
+            albumArtist
+          };
+        } else {
+          genre = primaryGenre;
+          result = {
+            albumMetadata,
+            genre,
+            albumArtist
+          };
+        }
+        return res.status(200).json({ status: 200, data: result });
+      } else {
+        console.log('Metadata or genres not found');
+        return res.status(404).json({ status: 404, data: [] });
+      }
+
     } catch (error) {
       console.error(error);
-      res.status(500).send('Internal Server Error');
+      return res.status(500).send('Internal Server Error');
     }
   };
 
@@ -73,7 +114,7 @@ export default class FeedsController {
       const offset: number = +req.query.offset || 0;
       const skip: number = offset * max;
 
-    const query = `
+      const query = `
       MATCH (g:Genre {name: ${genre}})-[:RELATED_TO]->(n:Feed)
       RETURN n.id AS id, n.dateTime AS dateTime, n.music AS music,
              n.location AS location, n.likes AS likes, n.coordinates as coordinates
@@ -155,7 +196,7 @@ export default class FeedsController {
           music: "${feed.music}",
           dateTime: "${feed.dateTime}",
           likes: "${feed.likes}",
-          location: "${feed.location}",
+          location: "${feed.latitude}",
           coordinates: [-90, 0]
         })
         WITH f

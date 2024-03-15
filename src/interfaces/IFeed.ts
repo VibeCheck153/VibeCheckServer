@@ -9,9 +9,11 @@ export interface IFeed {
   id: string;
   dateTime: Date;
   music: string;
+  genre: string;
   likes: number;
-  location: string;
-  coordinates: Location;
+  address: string;
+  latitude: number;
+  longitude: number;
 }
 
 export class FeedFactory {
@@ -21,8 +23,10 @@ export class FeedFactory {
       music: record.get('music'),
       dateTime: record.get('dateTime'),
       likes: record.get('likes') ?? 0,
-      location: record.get('location'),
-      coordinates: { latitude: record.get('coordinates')[0], longitude: record.get('coordinates')[1] },
+      genre: record.get('genre'),
+      address: record.get('address'),
+      latitude: record.get('latitude'),
+      longitude: record.get('longitude'),
     };
   }
 }
