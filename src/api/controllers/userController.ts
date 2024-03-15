@@ -21,31 +21,6 @@ export default class UserController {
     }
   };
 
-  public googleAuthenticate = async (req: Request, res: Response, next: NextFunction) => {
-    try {
-      passport.authenticate('google', { scope: ['email', 'profile'] });
-      return res.status(200).json({ status: 200, data: 'User Authenticate' });
-    } catch (err) {
-      debugError(err);
-      return next(err);
-    }
-  };
-
-  public googleAuthenticateCallback = async (req: Request, res: Response, next: NextFunction) => {
-    try {
-      passport.authenticate('google', {
-        fail: (request: Request, response: Response) => {
-          return response.status(400).json({ status: 200, data: 'User Authentication Failed' });
-        },
-      }),
-        (request: Request, response: Response) => {
-          return response.status(200).json({ status: 200, data: 'User Authenticated Successfully!' });
-        };
-    } catch (err) {
-      debugError(err);
-      return next(err);
-    }
-  };
 
   public getAllUsers = async (req: Request, res: Response, next: NextFunction) => {
     const session = this.db.session({ database: config.dbName });
@@ -58,7 +33,7 @@ export default class UserController {
         MATCH (n:User)
         RETURN n.uid AS uid, n.username AS username, n.email AS email, n.age AS age,
           n.dob AS dob, n.photoURL AS photoURL, n.level AS level,
-          n.location AS location, n.likes AS likes, n.vibePoints AS vibePoints
+          n.latitude AS latitude, n.longitude AS longitude, n.likes AS likes, n.vibePoints AS vibePoints
         SKIP ${skip} LIMIT ${max};
       `;
 
@@ -83,9 +58,15 @@ export default class UserController {
     try {
       const query = `
         MATCH (n:User {uid:"${req.body.uid}"})
-        RETURN n.uid AS uid, n.username AS username, n.email AS email, n.age AS age,
+        OPTIONAL MATCH (n)-[:LIKE_GENRE]->(g:Genre)
+        OPTIONAL MATCH (n)-[:LIKE_GENRE]->(sg:SubGenre)
+        WITH n, COLLECT(DISTINCT g.name) AS genres, COLLECT(DISTINCT sg.name) AS subgenres
+        UNWIND genres + subgenres AS genre
+        WITH n, COLLECT(DISTINCT genre) AS genres
+        RETURN n.uid AS uid, n.username AS username, n.email AS email, n.age AS age, n.phoneNumber AS phoneNumber, n.gender AS gender,
           n.dob AS dob, n.photoURL AS photoURL, n.level AS level,
-          n.location AS location, n.likes AS likes, n.vibePoints AS vibePoints
+          n.latitude AS latitude, n.longitude AS longitude, n.likes AS likes, n.vibePoints AS vibePoints,
+          genres
       `;
       const result = await session.run(query);
       if (result.records.length > 0) {
@@ -151,33 +132,61 @@ export default class UserController {
     const session = this.db.session({ database: config.dbName });
     const userInput = req.body;
     try {
-      const createQuery = `
-          CREATE (u:User {
-            uid: "${userInput.uid}",
-            username: "${userInput.username}",
-            email: "${userInput.email}",
-            photoURL: "${
-              userInput.photoURL ||
-              'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'
-            }",
-            age: ${userInput.age !== undefined ? userInput.age : 18},
-            location: [${userInput.location[0]}, ${userInput.location[1]}],
-            dob: "${userInput.dob}",
-            likes: ${userInput.likes !== undefined ? userInput.likes : 0},
-            vibePoints: ${userInput.vibePoints !== undefined ? userInput.vibePoints : 0},
-            level: ${userInput.level !== undefined ? userInput.level : 1}
-          })
-          RETURN u.uid as uid, u.email as email, u.username as username;
+      // Create the user node
+      const createUserQuery = `
+        CREATE (u:User {
+          uid: "${userInput.uid}",
+          username: "${userInput.username}",
+          email: "${userInput.email}",
+          phoneNumber: "${userInput.phoneNumber}",
+          gender: "${userInput.gender}",
+          photoURL: "${
+            userInput.photoURL ||
+            'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'
+          }",
+          age: ${userInput.age !== undefined ? userInput.age : 21},
+          latitude: ${userInput.latitude},
+          longitude: ${userInput.longitude},
+          dob: "${userInput.dob}",
+          likes: ${userInput.likes !== undefined ? userInput.likes : 0},
+          vibePoints: ${userInput.vibePoints !== undefined ? userInput.vibePoints : 0},
+          level: ${userInput.level !== undefined ? userInput.level : 1}
+        })
+        RETURN u.uid as uid, u.email as email, u.username as username;
+      `;
+  
+      const createUserResult = await session.run(createUserQuery);
+  
+      // Link the user to genres
+      if (userInput.genres && userInput.genres.length > 0) {
+        const linkGenresQuery = `
+          UNWIND $genres AS genre
+          MATCH (u:User {uid: "${userInput.uid}"})
+          OPTIONAL MATCH (g:Genre {name: genre})
+          OPTIONAL MATCH (sg:SubGenre {name: genre})
+          WITH u, CASE WHEN g IS NOT NULL THEN [g] ELSE [] END AS genres, CASE WHEN sg IS NOT NULL THEN [sg] ELSE [] END AS subgenres
+          FOREACH (x IN genres | MERGE (u)-[:LIKE_GENRE]->(x))
+          FOREACH (y IN subgenres | MERGE (u)-[:LIKE_GENRE]->(y))
         `;
-      const createResult = await session.run(createQuery);
+  
+        await session.run(linkGenresQuery, {
+          genres: userInput.genres,
+        });
+      }
+  
       const token = Jwt.sign(
-        { uid: createResult.records[0]['_fields'][0], email: createResult.records[0]['_fields'][1] },
+        {
+          uid: createUserResult.records[0]['_fields'][0],
+          email: createUserResult.records[0]['_fields'][1],
+        },
         config.jwtAccessTokenSecret,
         {
           expiresIn: '365d',
-        },
+        }
       );
 
+      console.log(token);
+  
       return res.status(200).json({ status: 200, data: 'User created successfully!' });
     } catch (error) {
       debugError(error.toString());

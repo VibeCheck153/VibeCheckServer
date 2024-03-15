@@ -1,22 +1,19 @@
 import { encrypt } from '../services/encryption';
 
-type Location = {
-  latitude: number;
-  longitude: number;
-};
-
 export interface IUser {
   uid: string;
   username: string;
-  dob: Date;
   age: number;
   email: string;
   photoURL: string;
-  location: Location;
+  latitude: number;
+  longitude: number;
   likes: number;
   vibePoints: number;
-  //!Not sure
+  phoneNumber: string;
+  gender: string;
   level: number;
+  genres: Array<string>;
 }
 
 export class UserFactory {
@@ -24,14 +21,17 @@ export class UserFactory {
     return {
       uid: encrypt(record.get('uid'))['encryptedData'],
       username: record.get('username'),
-      dob: new Date(record.get('dob')),
       age: record.get('age').toNumber(),
       email: record.get('email'),
       photoURL: record.get('photoURL'),
-      location: { latitude: record.get('location')[0], longitude: record.get('location')[2] },
+      phoneNumber: record.get('phoneNumber'),
+      gender: record.get('gender'),
+      latitude: record.get('latitude'),
+      longitude: record.get('longitude'),
       likes: record.get('likes'),
       vibePoints: record.get('vibePoints'),
       level: record.get('level'),
+      genres: record.get('genres'),
     };
   }
 }

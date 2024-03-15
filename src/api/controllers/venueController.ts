@@ -29,9 +29,9 @@ export default class VenueController {
 
       const query = `
         MATCH (n:Venue)
-        RETURN id(n) AS id, n.type AS type, n.name AS name, n.desc AS desc,
+        RETURN id(n) AS id, n.type AS type, n.name AS name, n.desc as desc,
           n.gmap_link AS gmap_link, n.instagram_link AS instagram_link, n.address AS address,
-          n.location AS location, n.coordinates AS coordinates
+          n.location AS location, n.latitude AS latitude, n.longitude AS longitude
         SKIP ${skip} LIMIT ${max};
       `;
 
@@ -46,41 +46,6 @@ export default class VenueController {
     } catch (error) {
       debugError(error.toString());
       return next(error);
-    } finally {
-      session.close();
-    }
-  };
-
-  public getVenueByName = async (req: Request, res: Response, next: NextFunction) => {
-    const session = this.db.session({ database: config.dbName });
-    try {
-      const name = req.body.name.trim();
-      const escapedName = name.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-      const regex = new RegExp(`.*${escapedName}.*`, 'i');
-      
-      const query = `
-      MATCH (n:Venue)
-      WHERE toLower(n.name) =~ $nameRegex
-      RETURN id(n) AS id, n.type AS type, n.name AS name, n.desc AS desc,
-        n.gmap_link AS gmap_link, n.instagram_link AS instagram_link, n.address AS address,
-        n.location AS location, n.coordinates AS coordinates;
-      `;
-    
-      const result = await session.run(query, { nameRegex: `(?i).*${escapedName}.*` });
-  
-      const resultList = result.records.map(record => {
-        const venue = VenueFactory.createVenueFromRecord(record, config.secretKey);
-        return venue;
-      });
-  
-      if (resultList.length === 0) {
-        return res.status(404).json({ status: 404, data: 'No Venue with this name' });
-      }
-  
-      return res.status(200).json({ status: 200, data: resultList });
-    } catch (err) {
-      debugError(err);
-      return next(err);
     } finally {
       session.close();
     }

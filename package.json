@@ -60,6 +60,7 @@
     "swagger-ui-express": "^5.0.0",
     "typedi": "^0.10.0",
     "uuid": "^9.0.1",
+    "uuidv4": "^6.2.13",
     "winston": "^3.11.0"
   },
   "devDependencies": {

@@ -11,7 +11,8 @@ export interface IVenue {
   gmap_link: string;
   instagram_link: string;
   location: string;
-  coordinates: Location;
+  latitude: number;
+  longitude: number;
   address: string;
 }
 
@@ -26,7 +27,8 @@ export class VenueFactory {
       instagram_link: record.get('instagram_link'),
       address: record.get('address'),
       location: record.get('location'),
-      coordinates: { latitude: record.get('coordinates')[0], longitude: record.get('coordinates')[1] },
+      latitude: record.get('latitude'),
+      longitude: record.get('longitude'),
     };
   }
 }

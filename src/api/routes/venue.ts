@@ -2,7 +2,7 @@ import { Router, Request, Response, NextFunction } from 'express';
 import { Driver, auth, driver } from 'neo4j-driver';
 import VenueController from '../controllers/venueController';
 import config from '../../config';
-import checkAdmin from '../middlewares/check_admin';
+import checkAuth from '../middlewares/attachCurrentUser';
   
 const route = Router();
 
@@ -16,19 +16,18 @@ export default (app: Router) => {
   const venueController = new VenueController(db);
 
   //* GET CALLS
-  route.get('/test', checkAdmin, venueController.test);
-  route.get('/', checkAdmin, venueController.getAllVenues);
-  route.get('/name', checkAdmin, venueController.getVenueByName);
-  route.get('/search', checkAdmin, venueController.searchVenue);
-  route.get('/id', checkAdmin, venueController.getVenueByID);
+  route.get('/test', checkAuth, venueController.test);
+  route.get('/', checkAuth, venueController.getAllVenues);
+  route.get('/search', checkAuth, venueController.searchVenue);
+  route.get('/id', checkAuth, venueController.getVenueByID);
   
 
   //* POST CALLS
-  route.post('/', checkAdmin, venueController.registerVenue);
+  route.post('/', checkAuth, venueController.registerVenue);
 
   //* PUT CALLS
-  route.put('/', checkAdmin, venueController.updateVenue);
+  route.put('/', checkAuth, venueController.updateVenue);
 
   //* DELETE CALLS
-  route.delete('/', checkAdmin, venueController.deleteVenue);
+  route.delete('/', checkAuth, venueController.deleteVenue);
 };

@@ -3,7 +3,7 @@ import { Router, Request, Response, NextFunction } from 'express';
 import { Driver, auth, driver } from 'neo4j-driver';
 import FeedsController from '../controllers/feedsController';
 import checkAuth from '../middlewares/attachCurrentUser';
-import multer from 'multer';
+import multer from 'multer'; 
 
   
 const route = Router();
@@ -26,27 +26,28 @@ export default (app: Router) => {
   route.get('/all', checkAuth, feedsController.getAllFeeds);
   route.get('/loc', checkAuth, feedsController.locationDetect);
 
+
   //* POST CALLS
-  // const storage = multer.diskStorage({
-  //   destination: (req, file, cb) => {
-  //     cb(null, "uploads");
-  //   },
-  //   filename: (req, file, cb) => {
-  //     cb(null, `${uuidv4()}`) 
-  //   }
-  // });
+  const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+      cb(null, "/Users/pratikjadhav/ServerJS/VibeCheckServer/src/FeedsClustering/");
+    },
+    filename: (req, file, cb) => {
+      cb(null, `${file.originalname}.mp4`) 
+    }
+  });
 
-  const storage = multer.memoryStorage();
+  // const storage = multer.memoryStorage();
 
-  const fileFilter = (req: Request, file: { mimetype: string; }, cb) => {
-    if (file.mimetype.split('/')[0] === "video"){
+  const fileFilter = (req: Request, file, cb) => {
+    console.log(file);
+    if (file.mimetype.split('/')[0] === "video" || file.mimetype.split('/')[1] === "octet-stream"){
       cb(null, true);
     } else {
       cb(new multer.MulterError("LIMIT_UNEXPECTED_FILE"), false);
     }
   }
-
-  const upload = multer({storage, fileFilter, limits: {fileSize: 10000000}});
+  const upload = multer({storage, fileFilter, limits: {fileSize: 100000000}});
   
   route.post('/upload', checkAuth, upload.single("file"), feedsController.uploadVideo);
   route.post('/detect', checkAuth, upload.single("file"), feedsController.musicClassify);

@@ -21,11 +21,11 @@ export default (app: Router) => {
     
   //* GET CALLS
   route.get('/test', checkAuth, userController.test);
-  route.get('/auth/google', checkAuth, userController.googleAuthenticate);
-  route.get('/auth/google/callback', checkAuth, userController.googleAuthenticateCallback);
   route.get('/all', checkAuth, userController.getAllUsers);
   route.get('/', checkAuth, userController.getUserBySessionID);
   route.get('/exists', checkAuth, userController.userExists);
+
+  //TODO: Combine this with the register user itself
   route.get('/usernameexists', checkAuth, userController.usernameExists);
   route.get('/linkGenres', checkAuth, userController.getLinkedGenres);
 
